@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | EKRA PACOME</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        /* Styles personnalisés qui ne sont pas gérés par Tailwind */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #0f172a; /* Fond bleu nuit foncé */
+            color: white;
+            overflow-x: hidden; /* Évite le défilement horizontal inutile */
+        }
+
+        /* Configuration des cercles lumineux flous en arrière-plan */
+        .orb {
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            border-radius: 50%;
+            filter: blur(80px); /* Crée l'effet de flou artistique */
+            z-index: 0; /* Place les cercles derrière le contenu */
+            opacity: 0.2; /* Rendu très discret */
+        }
+        
+        /* Position et couleur du premier cercle (bleu) */
+        .orb-1 { 
+            top: -100px; 
+            left: -100px; 
+            background: #3b82f6; 
+            animation: float 10s infinite alternate; 
+        }
+        
+        /* Position et couleur du deuxième cercle (violet) */
+        .orb-2 { 
+            bottom: -100px; 
+            right: -100px; 
+            background: #8b5cf6; 
+            animation: float 10s infinite alternate-reverse; 
+        }
+
+        /* Animation de flottement pour les cercles */
+        @keyframes float {
+            from { transform: translate(0, 0); }
+            to { transform: translate(40px, 60px); }
+        }
+
+        /* Effet de texte dégradé pour le nom de famille */
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Style du bouton principal avec effet de lueur (Glow) */
+        .btn-glow {
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
+            transition: all 0.3s ease; /* Transition douce lors du clic/survol */
+        }
+        
+        /* Changement d'apparence au survol du bouton */
+        .btn-glow:hover {
+            box-shadow: 0 0 35px rgba(59, 130, 246, 0.7);
+            transform: scale(1.05); /* Agrandissement léger */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+
+    <main class="relative z-10 min-h-screen flex flex-col items-center justify-center px-6 text-center">
+        
+        <div class="mb-8 inline-flex items-center gap-2 rounded-full border border-slate-700 bg-slate-800/50 px-4 py-1.5 text-sm text-slate-300 backdrop-blur">
+            <span class="flex h-2 w-2 rounded-full bg-blue-500 animate-pulse"></span>
+            Disponible pour de nouveaux projets
+        </div>
+
+        <h1 class="max-w-4xl text-5xl font-bold tracking-tight sm:text-7xl lg:text-8xl">
+            <span class="text-gradient">KOUAME BOE</span><br>
+            <span class="text-blue-400">EKRA PACOME</span>
+        </h1>
+
+        <p class="mt-8 max-w-2xl text-lg text-slate-400 sm:text-xl md:text-2xl">
+            Développeur Frontend passionné par la création d'interfaces intuitives, 
+            esthétiques et centrées sur l'utilisateur.
+        </p>
+
+        <div class="mt-12 flex flex-col sm:flex-row items-center gap-6">
+            <button id="btn-projets" class="btn-glow px-8 py-4 bg-blue-600 rounded-full font-bold text-lg flex items-center gap-2 text-white">
+                Voir mes projets
+                <span>→</span>
+            </button>
+            
+            <a href="mailto:votre-email@exemple.com" class="text-slate-400 hover:text-white transition-colors flex items-center gap-2">
+                ✨ Me contacter
+            </a>
+        </div>
+
+        <div class="absolute bottom-10 text-xs uppercase tracking-[0.4em] text-slate-500">
+            Frontend · UI · Experience
+        </div>
+
+    </main>
+
+    <script>
+        // On récupère le bouton de projets par son ID
+        const btnProjets = document.getElementById('btn-projets');
+
+        // On définit ce qui se passe quand on clique sur le bouton
+        btnProjets.addEventListener('click', () => {
+            console.log("Clic sur 'Voir mes projets'");
+            // Exemple : Alerte simple avant de mettre en place les liens
+            alert("Bravo Pacome ! Cette section sera bientôt liée à tes travaux.");
+        });
+
+        // Message de confirmation dans la console pour vérifier que tout tourne
+        console.log("Le site de EKRA PACOME est prêt !");
+    </script>
+
+</body>
+</html>
